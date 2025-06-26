@@ -1,0 +1,35 @@
+{
+  "theme": "Dracula",
+  "selectedAuthType": "oauth-personal",
+  "mcpServers": {
+    "myPythonServer": {
+      "command": "python",
+      "args": ["mcp_server.py", "--port", "8080"],
+      "cwd": "./mcp_tools/python",
+      "timeout": 5000
+    },
+    "myNodeServer": {
+      "command": "node",
+      "args": ["mcp_server.js"],
+      "cwd": "./mcp_tools/node"
+    },
+    "myDockerServer": {
+      "command": "docker",
+      "args": ["run", "i", "--rm", "-e", "API_KEY", "ghcr.io/foo/bar"],
+      "env": {
+        "API_KEY": "$MY_API_TOKEN"
+      }
+    },
+    "apktool": {
+      "command": "python3",
+      "args": ["/Users/secfathy/Desktop/Workflow/APktool-MCP/APktool.py"],
+      "cwd": "/Users/secfathy/Desktop/Workflow/APktool-MCP",
+      "env": {
+        "APKTOOL_WORK_DIR": "/Users/secfathy/Desktop/Workflow/APktool-MCP",
+        "PYTHONPATH": "/Users/secfathy/Desktop/Workflow/APktool-MCP"
+      },
+      "timeout": 30000,
+      "trust": false
+    }
+  }
+}
